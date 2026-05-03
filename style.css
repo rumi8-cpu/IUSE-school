@@ -1,54 +1,48 @@
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY BACKGROUND */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #e3fdf5, #ffffff, #ffe6fa);
+    background: linear-gradient(135deg, #e0f7fa, #ffffff, #fce4ec);
 }
 
 /* HEADER */
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 15px 40px;
     background: linear-gradient(90deg, #0b3d2e, #1e8449);
     color: white;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-/* LOGO */
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo img {
-    height: 65px;
-    margin-right: 10px;
+    height: 60px;
     border-radius: 50%;
+    margin-right: 10px;
 }
 
-/* SCHOOL NAME */
-.school-name h2 {
-    font-size: 14px;
-    color: #d5f5e3;
-}
+.school-name h1 { font-size: 22px; }
+.school-name h2 { font-size: 12px; color: #d5f5e3; }
 
-.school-name h1 {
-    font-size: 22px;
-    color: white;
-}
-
-/* NAV */
 nav a {
-    margin: 0 10px;
     color: white;
+    margin: 5px 10px;
     text-decoration: none;
+    font-weight: 500;
 }
 
 /* HERO */
@@ -62,55 +56,51 @@ nav a {
     object-fit: cover;
 }
 
-/* OVERLAY */
-.hero::after {
-    content: "";
+.overlay {
     position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.5);
-    top: 0;
 }
 
-/* HERO TEXT */
 .hero-text {
     position: absolute;
     top: 30%;
     left: 10%;
     color: white;
-    z-index: 1;
-}
-
-.hero-text h2 {
-    font-size: 45px;
-}
-
-/* BUTTON FIX */
-.hero-buttons {
-    margin-top: 20px;
     display: flex;
+    flex-direction: column;
     gap: 15px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: linear-gradient(45deg, #ff9900, #ff6600);
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.btn.big {
-    font-size: 18px;
+.btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ff9800, #ff5722);
 }
 
 .whatsapp {
     background: #25D366;
 }
 
-/* ADMISSION CARDS */
+.apply {
+    background: linear-gradient(45deg, #2196f3, #00bcd4);
+}
+
+.big {
+    font-size: 18px;
+}
+
+/* CARDS */
 .admission-cards {
     display: flex;
     justify-content: center;
@@ -121,36 +111,22 @@ nav a {
 
 .ad-card {
     background: white;
-    padding: 25px;
+    padding: 20px;
     width: 220px;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
-/* TRUST */
-.trust {
-    display: flex;
-    justify-content: space-around;
-    padding: 40px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 /* FEATURES */
 #features {
     text-align: center;
-    padding: 50px;
+    padding: 50px 20px;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
     gap: 20px;
 }
 
@@ -163,32 +139,48 @@ nav a {
 /* GALLERY */
 .gallery {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
 .gallery img {
     width: 300px;
+    max-width: 90%;
     border-radius: 10px;
 }
 
 /* VIDEOS */
 .videos {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
 .videos iframe {
-    width: 300px;
+    width: 320px;
     height: 200px;
+}
+
+/* FORM */
+.form-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.form-container iframe {
+    width: 90%;
+    max-width: 900px;
+    height: 900px;
+    border: none;
 }
 
 /* CTA */
 .cta {
     text-align: center;
     padding: 40px;
-    background: #0b3d2e;
+    background: linear-gradient(90deg, #0b3d2e, #145a32);
     color: white;
 }
 
@@ -198,7 +190,7 @@ nav a {
     padding: 30px;
 }
 
-/* FLOAT BUTTON */
+/* FLOAT BUTTONS */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -207,7 +199,16 @@ nav a {
     padding: 15px;
     border-radius: 50%;
     color: white;
-    text-decoration: none;
+}
+
+.back-home {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: #0b3d2e;
+    padding: 12px;
+    border-radius: 50%;
+    color: white;
 }
 
 /* FOOTER */
@@ -217,122 +218,34 @@ footer {
     text-align: center;
     padding: 10px;
 }
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
 
-/* MOBILE (phones) */
+/* MOBILE */
 @media (max-width: 768px) {
 
-    /* HEADER */
     header {
         flex-direction: column;
         text-align: center;
-        padding: 10px;
     }
 
-    .logo {
-        flex-direction: column;
-    }
-
-    .logo img {
-        height: 50px;
-        margin-bottom: 5px;
-    }
-
-    .school-name h1 {
-        font-size: 18px;
-    }
-
-    .school-name h2 {
-        font-size: 12px;
-    }
-
-    /* NAV */
-    nav {
-        margin-top: 10px;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 5px;
-        font-size: 14px;
-    }
-
-    /* HERO */
     .hero img {
         height: 250px;
     }
 
     .hero-text {
-        top: 25%;
+        top: 20%;
         left: 5%;
     }
 
-    .hero-text h2 {
-        font-size: 24px;
-    }
-
-    .hero-text p {
-        font-size: 14px;
-    }
-
-    /* BUTTONS */
     .hero-buttons {
         flex-direction: column;
-        gap: 10px;
-    }
-
-    .btn {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    /* CARDS */
-    .admission-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .trust {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* GALLERY */
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .gallery img {
-        width: 90%;
-    }
-
-    /* VIDEOS */
-    .videos {
-        flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .videos iframe {
         width: 90%;
-        height: 200px;
-    }
-}
-
-/* TABLET */
-@media (max-width: 1024px) {
-
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
-    .gallery img {
-        width: 250px;
-    }
-
-    .videos iframe {
-        width: 250px;
+    .form-container iframe {
+        height: 700px;
     }
 }
